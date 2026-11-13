@@ -1,0 +1,60 @@
+{
+  "name": "@arraypress/image-pipeline",
+  "version": "1.0.0",
+  "description": "Images in the browser, done properly: what Chrome can encode and how big, a linear-light Lanczos resampler that works in bands, crop, turn and flip geometry, a quality search for a target file size, EXIF read and rewritten (orientation, location, thumbnail), EXIF put back into JPEG, PNG and WebP, colour profiles detected, palette PNGs and animated WebP written. Zero dependencies.",
+  "type": "module",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    },
+    "./testing": {
+      "types": "./src/testing.d.ts",
+      "import": "./src/testing.js"
+    }
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "test": "npm run lint && npm run typecheck && node --test tests/*.test.js && npm run duplication",
+    "lint": "eslint .",
+    "typecheck": "tsc -p . && tsc -p tsconfig.types.json && diff -r -x '*.js' .types src && rm -rf .types",
+    "types": "tsc -p tsconfig.types.json && cp -R .types/. src/ && rm -rf .types",
+    "duplication": "jscpd"
+  },
+  "keywords": [
+    "image",
+    "resize",
+    "lanczos",
+    "exif",
+    "gps",
+    "canvas",
+    "offscreencanvas",
+    "webp",
+    "png",
+    "jpeg",
+    "compress"
+  ],
+  "author": "David Sherlock",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arraypress/image-pipeline.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.6",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0",
+    "jscpd": "^5.4.3",
+    "playwright": "1.64.0",
+    "typescript": "^7.0.2"
+  }
+}
