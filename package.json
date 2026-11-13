@@ -1,7 +1,7 @@
 {
   "name": "@arraypress/image-pipeline",
   "version": "1.0.0",
-  "description": "Images in the browser, done properly: what Chrome can encode and how big, a linear-light Lanczos resampler that works in bands, crop, turn and flip geometry, a quality search for a target file size, EXIF read and rewritten (orientation, location, thumbnail), EXIF put back into JPEG, PNG and WebP, colour profiles detected, palette PNGs and animated WebP written. Zero dependencies.",
+  "description": "Images in the browser, done properly: a linear-light resampler, crop, turn and flip, a quality search for a target file size, EXIF read, rewritten and put back, colour profiles kept, palette PNGs and animated WebP. Zero dependencies.",
   "type": "module",
   "main": "src/index.js",
   "types": "src/index.d.ts",
